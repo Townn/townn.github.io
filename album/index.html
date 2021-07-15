@@ -13,14 +13,28 @@
                 var album = [
                     "2021-07-14_17.25.33.png",
                     "2021-07-14_17.26.55.png",
-                    "2021-07-14_17.38.26.png"
+                    "2021-07-14_17.38.26.png",
+                    "2019-08-16_19.41.56.png",
+                    "2019-08-16_20.08.53.png",
+                    "2019-08-18_11.09.54.png",
+                    "2019-08-19_11.37.41.png",
+                    "2019-08-20_17.02.52.png",
+                    "2019-08-21_16.46.41.png",
+                    "2019-10-12_17.55.31.png",
+                    "2019-10-12_18.06.44.png",
+                    "2019-10-12_21.47.28.png",
                 ];
+                /*
                 var a = ['<div class="col-md-3"><img onclick=',"'$(this).attr(",'"id","active");set();',"' id=",'"view" class="img-responsive" src="'];
                 var b = ['" alt="'];
                 var c = '" data-toggle="modal" data-target="#myModal" ></div>';
+                */
                 for(var i = 0;i<album.length;i++){
                     var p = album[i];
-                    
+                    var q = ['<div class="col-md-3 column"><img onclick=',"'$(this).attr(",'"id","active");set();',"' id=",'"view" class="img-responsive" src="',p,'" alt="',p,'" data-toggle="modal" data-target="#myModal" ></div>'];
+                    $("#album").append(q.join(""));
+                    console.log(q.join(""));
+                    /*
                     $("#album").append('<div class="col-md-3"><img onclick=');
                     $("#album").append("'$(this).attr(");
                     $("#album").append('"id","active");set();');
@@ -32,6 +46,7 @@
                     $("#album").append('" data-toggle="modal" data-target="#myModal" ></div>');
                     console.log('<div class="col-md-3"><img onclick=',"'$(this).attr(",'"id","active");set();',"' id=",'"view" class="img-responsive" src="',p,'" alt="',p,'" data-toggle="modal" data-target="#myModal" ></div>');
                     $("#album").append('<div class="col-md-3"><img onclick=',"'$(this).attr(",'"id","active");set();',"' id=",'"view" class="img-responsive" src="',p,'" alt="',p,'" data-toggle="modal" data-target="#myModal" ></div>');
+                    */
                 };
             });
             function set(){
@@ -75,19 +90,6 @@
                 <div id="album" class="col-md-12 column">
                     <h1>Town <small> - The town we build</small></h1>
                         <h3>一些精美的服务器世界截图会在此展出</h3>
-
-                    <div class="col-md-3">
-                            <img onclick='$(this).attr("id","active");set();' id="view" class="img-responsive" src="2021-07-14_17.25.33.png" alt="2021-07-14_17.25.33.png" data-toggle="modal" data-target="#myModal" >
-                    </div>
-
-                    <div class="col-md-3">
-                        <img onclick='$(this).attr("id","active");set();' id="view" class="img-responsive" src="2021-07-14_17.26.55.png" alt="2021-07-14_17.25.55.png" data-toggle="modal" data-target="#myModal" >
-                    </div>
-
-                    <div class="col-md-3">
-                        <img onclick='$(this).attr("id","active");set();' id="view" class="img-responsive" src="2021-07-14_17.38.26.png" alt="2021-07-14_17.38.26.png" data-toggle="modal" data-target="#myModal" >
-                    </div>
-
                 </div>
 
                 <ul class="breadcrumb" style="position: fixed;bottom: 0;width: 100%;">
