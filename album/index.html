@@ -1,30 +1,80 @@
 <html>
     <head>
-        <link rel="stylesheet" href="mobile.css">
-        <link rel="icon" type="image/png" sizes="144x144" href="icon.png"/>
-        <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="icon.png"/>
-        <link rel="stylesheet" href="animation.css">
+        <link rel="stylesheet" href="../mobile.css">
+        <link rel="icon" type="image/png" sizes="144x144" href="../icon.png"/>
+        <link rel="apple-touch-icon" type="image/png" sizes="144x144" href="../icon.png"/>
+        <link rel="stylesheet" href="../animation.css">
         <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
         <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <title>Town | DEMO</title>
+
+        <script type="text/javascript">
+            function set(){
+                var photoname;
+                alert("done");
+                photoname = $("#active").attr("src");
+                $("a#inmodal").attr("href",photoname);
+                $("img#inmodal").attr({
+                    "src" : photoname,
+                    "alt" : photoname
+                });
+                $("#active").attr("id","view");
+                $(".modal-title").text(photoname);
+
+            };
+        </script>
+
+        <title>Town | 相册</title>
     </head>
     <body>
         <div class="container">
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Photo Name</h4>
+                        </div>
+                        <div class="modal-body">
+                            <a id="inmodal" href="empty.jpg">
+                                <img id="inmodal" class="img-responsive" src="empty.jpg" alt="empty.jpg">
+                            </a>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row clearfix">
                 <div class="col-md-12 column">
                     <h1>Town <small> - The town we build</small></h1>
-                        <!--
-                            you want to write
-                        -->
+                        <h3>一些精美的服务器世界截图会在此展出</h3>
+
+                    <div class="col-md-3">
+                            <img onclick='$(this).attr("id","active");set();' id="view" class="img-responsive" src="2021-07-14_17.25.33.png" alt="2021-07-14_17.25.33.png" data-toggle="modal" data-target="#myModal" >
+                    </div>
+
+                    <div class="col-md-3">
+                        <img onclick='$(this).attr("id","active");set();' id="view" class="img-responsive" src="2021-07-14_17.26.55.png" alt="2021-07-14_17.25.55.png" data-toggle="modal" data-target="#myModal" >
+                    </div>
+
+                    <div class="col-md-3">
+                        <img onclick='$(this).attr("id","active");set();' id="view" class="img-responsive" src="2021-07-14_17.38.26.png" alt="2021-07-14_17.38.26.png" data-toggle="modal" data-target="#myModal" >
+                    </div>
+
                 </div>
-            </div>
+
                 <ul class="breadcrumb" style="position: fixed;bottom: 0;width: 100%;">
-                    <li><a href="index.html">主页</a></li>
-                    <li class="active"><a href="album">相册</a></li>
+
+                    <li><a href="../index.html">主页</a></li>
+                    <li class="active">相册</li>
                     <li><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__e6cxx5UMlZVNkFCVFZDOVdDT0VISU5DTDJXVThPVy4u">审核表单</a></li>
-                    <li><a href="playerlist.html">成员列表</a></li>
+                    <li><a href="../playerlist.html">成员列表</a></li>
+
                 </ul>
+            </div>
         </div>
     </body>
 </html>
