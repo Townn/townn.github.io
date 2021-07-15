@@ -9,9 +9,33 @@
         <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
         <script type="text/javascript">
+            $(document).ready(function(){
+                var album = [
+                    "2021-07-14_17.25.33.png",
+                    "2021-07-14_17.26.55.png",
+                    "2021-07-14_17.38.26.png"
+                ];
+                var a = ['<div class="col-md-3"><img onclick=',"'$(this).attr(",'"id","active");set();',"' id=",'"view" class="img-responsive" src="'];
+                var b = ['" alt="'];
+                var c = '" data-toggle="modal" data-target="#myModal" ></div>';
+                for(var i = 0;i<album.length;i++){
+                    var p = album[i];
+                    
+                    $("#album").append('<div class="col-md-3"><img onclick=');
+                    $("#album").append("'$(this).attr(");
+                    $("#album").append('"id","active");set();');
+                    $("#album").append("' id=");
+                    $("#album").append('"view" class="img-responsive" src="');
+                    $("#album").append(p);
+                    $("#album").append('" alt="');
+                    $("#album").append(p);
+                    $("#album").append('" data-toggle="modal" data-target="#myModal" ></div>');
+                    console.log('<div class="col-md-3"><img onclick=',"'$(this).attr(",'"id","active");set();',"' id=",'"view" class="img-responsive" src="',p,'" alt="',p,'" data-toggle="modal" data-target="#myModal" ></div>');
+                    $("#album").append('<div class="col-md-3"><img onclick=',"'$(this).attr(",'"id","active");set();',"' id=",'"view" class="img-responsive" src="',p,'" alt="',p,'" data-toggle="modal" data-target="#myModal" ></div>');
+                };
+            });
             function set(){
                 var photoname;
-                alert("done");
                 photoname = $("#active").attr("src");
                 $("a#inmodal").attr("href",photoname);
                 $("img#inmodal").attr({
@@ -48,7 +72,7 @@
             </div>
 
             <div class="row clearfix">
-                <div class="col-md-12 column">
+                <div id="album" class="col-md-12 column">
                     <h1>Town <small> - The town we build</small></h1>
                         <h3>一些精美的服务器世界截图会在此展出</h3>
 
