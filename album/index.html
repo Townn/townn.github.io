@@ -33,7 +33,7 @@
                     var p = album[i];
                     var q = ['<div class="col-md-3 column"><img onclick=',"'$(this).attr(",'"id","active");set();',"' id=",'"view" class="img-responsive" src="',p,'" alt="',p,'" data-toggle="modal" data-target="#myModal" ></div>'];
                     $("#album").append(q.join(""));
-                    console.log(q.join(""));
+                    //console.log(q.join(""));
                     /*
                     $("#album").append('<div class="col-md-3"><img onclick=');
                     $("#album").append("'$(this).attr(");
@@ -89,7 +89,7 @@
             <div class="row clearfix">
                 <div id="album" class="col-md-12 column">
                     <h1>Town <small> - The town we build</small></h1>
-                        <h3>一些精美的服务器世界截图会在此展出</h3>
+                        <h3>一些精美的服务器世界截图会在此展出  <small>  由于图片较多，加载时间可能较长，请耐心等待</small></h3>
                 </div>
 
                 <ul class="breadcrumb" style="position: fixed;bottom: 0;width: 100%;">
